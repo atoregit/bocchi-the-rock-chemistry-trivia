@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define bocchi = Character("Hitori Gotou")
+define bocchi = Character("Hitori Gotoh")
 
 
 # The game starts here.
@@ -32,7 +32,7 @@ label start:
     show bocchi3
     with fade
 
-    bocchi "M-my name's H-Hitori... Hitori Gotou!"
+    bocchi "M-my name's H-Hitori... Hitori Gotoh!"
 
     bocchi "Um...W-would you like to p-participate in this q-quick Chemistry quiz?"
 
@@ -101,7 +101,7 @@ label wrong1:
 
 label correct1:
 
-    bocchi "R-Right! Let's m-m  ove on to the next question!"
+    bocchi "R-Right! Let's move on to the next question!"
 
     bocchi "What is the third element of the periodic table?"
 
@@ -114,7 +114,7 @@ label correct1:
             jump wrong1
         
 label correct2: 
-    bocchi "N-nice one! L-Let's go to question number 3."
+    bocchi "Nice one! Let's go to question number 3."
  
     bocchi "What is the charge of an electron?"
 
@@ -124,9 +124,6 @@ label correct2:
 
         "-1":
             jump correct3
-
-        "At least 4":
-            jump wrong1
 
 label correct3:
 
@@ -177,9 +174,37 @@ label correct4:
     bocchi "Using the Henderson-Hasselbalch equation and the Nernst equation, calculate the fraction of PHMB monomers and oligomers that are present in the solution at pH 7.5, and the electrostatic potential of the PHMB molecule at the surface of a negatively charged silica particle (with a zeta potential of -30 mV) in the same solution, assuming a temperature of 25°C and an ionic strength of 0.1 M."
 
     menu:
+        "At least 1":
+            jump correct5
         "Huh?":
+            jump wrong3
+        "Huh?":
+            jump wrong3
+        "Huh?":
+            jump wrong3
+
+label wrong3:
+
+    bocchi "Too bad! Try answering the question next time :-)"
+
+    e "I actually dk the answer of the question"
+
+    return
+
+label correct5:
+    
+    bocchi "You're really a chemistry genius! I can't believe someone answered it correctly!"
+
+    "Me" "Y-yeah.."
+
+    bocchi "Let's answer some chem history now!"
+
+    bocchi "What famous chemist is known for developing the periodic table of elements?"
+
+    menu:
+        "Dmitri Mendeleev":
             return
-        "Huh?":
+        "Niels Bohr":
             return
-        "Huh?":
+        "Werner Heisenberg":
             return
