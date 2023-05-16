@@ -92,7 +92,7 @@ label correct0:
 
 label wrong1:
 
-    "Wrong! Report to Sir Gian tomorrow."
+    bocchi "Wrong! Report to Sir Gian tomorrow."
 
     e "crash game hehe"
 
@@ -130,7 +130,7 @@ label correct3:
     hide bocchi1
     show bocchi2
 
-    bocchi "Wow! S-Sugoi!"
+    bocchi "Wow!"
 
     hide bocchi2
     show bocchi1
@@ -167,11 +167,12 @@ label correct4:
     hide bocchi2
     show bocchi1
 
+
+
     bocchi "Consider the hypothetical chemical compound polyhexamethylenebiguanide hydrochloride (PHMB), which is used as a disinfectant and has a molecular formula of C₃H₁₂N₄Cl₃."
-
     bocchi "Assuming PHMB exists as a complex mixture of oligomers and monomers in solution, with an average molecular weight of 40,000 g/mol, and a degree of polymerization of approximately 200, calculate the concentration of PHMB in a solution that has a pH of 7.5 and a molarity of 0.1. Additionally, assume that the PHMB molecules form positively charged quaternary ammonium groups in solution, which can undergo electrostatic interactions with negatively charged surfaces."
-
     bocchi "Using the Henderson-Hasselbalch equation and the Nernst equation, calculate the fraction of PHMB monomers and oligomers that are present in the solution at pH 7.5, and the electrostatic potential of the PHMB molecule at the surface of a negatively charged silica particle (with a zeta potential of -30 mV) in the same solution, assuming a temperature of 25°C and an ionic strength of 0.1 M."
+    
 
     menu:
         "At least 1":
@@ -203,8 +204,210 @@ label correct5:
 
     menu:
         "Dmitri Mendeleev":
-            return
+            jump correct6
         "Niels Bohr":
-            return
+            jump wrong3
         "Werner Heisenberg":
-            return
+            jump wrong1
+
+label correct6:
+    
+    bocchi "W-Well done!"
+
+    bocchi "What type of bonding involves a sea of electrons?"
+
+    menu:
+        "Ionic":
+            jump wrong4
+        "Metallic":
+            jump correct7
+        "Covalent":
+            jump wrong4
+
+label correct7:
+    
+    bocchi "Nice."
+
+    bocchi "Who created the atomic bomb?"
+
+    menu:
+        "Orsic Paman":
+            jump wrong4
+        "Oppenheimer":
+            jump correct8
+        "Opiso":
+            jump wrong4
+
+label wrong4:
+    
+    bocchi "Too bad!"
+
+    bocchi "I bet you have a Chem grade of 2.50 :)"
+
+    e "CRASHHH"
+
+    return
+
+label correct8:
+    
+    bocchi "Stupendous!"
+
+    bocchi "I think you need a periodic table for this one."
+
+    bocchi "If 4 neutrons are released during the combination of Iodine-127 and Uranium-235, what atom is created?"
+
+    menu:
+        "Unquadquadium-358":
+            jump wrong4
+        "Unquadpentium-358":
+            jump correct9
+        "Unquadhexium-358":
+            jump wrong4
+
+label correct9:
+    
+    bocchi "Impressive.."
+
+    bocchi "This is the 10th question! Good luck"
+
+    label correct95:
+        bocchi "If I had a rough night out and wanted to forget everything the day after, what drug would I cook?"
+        menu:
+            "Exelon":
+                jump wrong5
+            "Aricept":
+                jump wrong5
+            "Benzodiazepines":
+                jump correct10
+
+label wrong5: 
+    bocchi "Let's give you another chance! I think you just mispressed the answer or something, haha"
+
+    jump correct95
+
+label correct10:
+
+    bocchi "You've now advanced to the Hard Level!"
+
+    bocchi "Let's start with my most difficult question, leaving famous scientists such as Quandale Dingle confused and dazed."
+
+    bocchi "Let's see how a mere PSHS student can answer this impossible question."
+
+    bocchi "What is the boiling point of water?"
+
+    menu:
+        "100 C":
+            jump correct11
+        "212 F":
+            bocchi "{cps=20}AMERICAN DETECTED. ELIMINATION STARTS IN {/cps}{cps=4}3...2...1...e{/cps}{nw}"
+            e "dreaded e. you pizza eating mcdonalds grubbing patriot"
+        "373.15 K":
+            jump correct11
+
+label correct11:
+    bocchi "I can't believe this..."
+
+    bocchi "Let's go to the next question! You're like the Albert Einstein of Chemistry!"
+
+    bocchi "What does the R mean in PV = nRT?"
+
+    menu:
+        "Rizz Constant":
+            jump wrong1
+        "Rhyss Constant":
+            jump wrong1
+        "Natural Gas Constant":
+            jump wrong1
+        "Revyel Constant":
+            jump wrong1
+        "Ideal Gas Constant":
+            jump correct12
+        "The Rodriguez Constant":
+            jump wrong1
+        "Rodriguez's Gas Constant":
+            jump wrong1
+        "Rodolfo Crizz Constant":
+            jump wrong1
+        "Real Gas Constant":
+            jump wrong1
+        "Ramer the Gamer Constant":
+            jump wrong1
+
+label correct12:
+    bocchi "You somehow managed to answer that! Well done!"
+
+    bocchi "Next question..."
+
+    bocchi "Which of the following has the most basic structure among the choices?"
+
+    menu:
+        "Methane":
+            jump wrong6
+        "Carbon":
+            jump wrong6
+        "Titin":
+            jump wrong6
+        "Electron":
+            jump correct13
+        "Proton":
+            jump wrong6
+            
+label wrong6:
+    bocchi "Wrong! Report to Sir Kier tomorrow."
+
+    e "hii"
+
+label correct13:
+    bocchi "-"
+
+    bocchi "Next question..."
+
+    bocchi "Which of the following structures have                    ?"
+
+    menu:
+        "Methane":
+            jump wrong6
+        "Carbon":
+            jump wrong6
+        "Titin":
+            jump wrong6
+        "Electron":
+            jump correct14
+        "Proton":
+            jump wrong6
+
+label correct14:
+    bocchi "You somehow managed to answer that! Well done!"
+
+    bocchi "Next question..."
+
+    bocchi "Which of the following is a double-ring nitrogenous base?"
+
+    menu:
+        "Thymine":
+            jump wrong6
+        "Cytosine":
+            jump wrong6
+        "Guanine":
+            jump correct15
+        "Ribose":
+            jump wrong6
+        "Adenine":
+            jump wrong6
+
+
+label correct15:
+    bocchi "Amazing!"
+
+    bocchi "Keep up the good work! We're nearing the end of the quiz!"
+    
+    bocchi "What is the electron domain geometry of sulfur hexafluoride?"
+
+    menu:
+        "Square pyramidal":
+            jump wrong6
+        "Octahedral":
+            jump correct15
+        "Linear":
+            jump wrong6
+
