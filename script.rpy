@@ -5,9 +5,6 @@
 
 define bocchi = Character("Hitori Gotoh")
 
-
-# The game starts here.
-
 label start:
 
     # Show a background. This uses a placeholder by default, but you can
@@ -25,22 +22,33 @@ label start:
 
     "..."
 
+    "Sitting on the steps of the quadrangle, I take a deep breath."
+
+    "Me" "It's been a week, huh?"
+
+    "Probably from the exhaustion, my eyes start to gaze at the sky."
+
+    "I sit there in silence for a while."
+
+    "However, as if to disturb my quick meditation session, something appears behind my back."
+
     "???" "Huh? O-oh!"
 
     "???" "H-Hey...you over there!"
 
+    scene bg pisay 2
     show bocchi3
-    with fade
 
-    bocchi "M-my name's H-Hitori... Hitori Gotoh!"
+    "Hitori" "M-my name's H-Hitori..."
 
+    "Me" "Hey.. who are yo-"
+
+    bocchi "Hitori Gotoh! If you want... you can also call me Bocchi!"
+
+    hide bocchi3
+    show bocchi2
+    
     bocchi "Um...W-would you like to p-participate in this q-quick Chemistry quiz?"
-
-    "Me" "What do I get?"
-
-    bocchi "I-I-I promise I'll give you a reward if you get it all right! <3 ;)"
-
-    bocchi "...S-So...Whaddya say?"
 
     menu: 
 
@@ -50,7 +58,6 @@ label start:
         "Sure thing! :))))))))))))":
             jump correct0
 
-    return
 
 label wrong0:
 
@@ -63,17 +70,16 @@ label wrong0:
     return
 
 label correct0:
+    
 
-    bocchi "Yay! I promise it'll be worth your time! ;)"
+    bocchi "Yay! I promise it'll be worth your time!"
 
     bocchi "Here we go, question number 1!"
 
     "Me" "Wait, we're starting no-" 
 
-    hide bocchi3
-
+    hide bocchi2
     show bocchi1
-
 
     bocchi "What are the parts of an atom?"
 
@@ -83,12 +89,7 @@ label correct0:
             jump wrong1
 
         "Proton, Neutron, Electron":
-            jump correct1
-
-
-    # This ends the game.
-
-    return
+            jump correct1 
 
 label wrong1:
 
@@ -130,12 +131,12 @@ label correct3:
     hide bocchi1
     show bocchi2
 
-    bocchi "Wow!"
+    bocchi "Sugoi! Let's go the next question!"
 
     hide bocchi2
     show bocchi1
 
-    bocchi "How many electrons do atoms want in their valence shell?"
+    bocchi "How many electrons do atoms want in their valence shell, according to the Octet Rule?"
 
     menu:
         "69e-2":
@@ -242,7 +243,7 @@ label wrong4:
     
     bocchi "Too bad!"
 
-    bocchi "I bet you have a Chem grade of 2.50 :)"
+    bocchi "lol"
 
     e "CRASHHH"
 
@@ -252,26 +253,22 @@ label correct8:
     
     bocchi "Stupendous!"
 
-    bocchi "I think you need a periodic table for this one."
-
-    bocchi "If 4 neutrons are released during the combination of Iodine-127 and Uranium-235, what atom is created?"
+    bocchi "Which of the following has the most basic structure among the choices?"
 
     menu:
-        "Unquadquadium-358":
+        "Titin":
             jump wrong4
-        "Unquadpentium-358":
+        "Electron":
             jump correct9
-        "Unquadhexium-358":
-            jump wrong4
 
 label correct9:
     
     bocchi "Impressive.."
 
-    bocchi "This is the 10th question! Good luck"
+    bocchi "This is the 10th question! Good luck.."
 
     label correct95:
-        bocchi "If I had a rough night out and wanted to forget everything the day after, what drug would I cook?"
+        bocchi "If I had a rough night out and wanted to forget everything the day after, what medicine should I take?"
         menu:
             "Exelon":
                 jump wrong5
@@ -289,20 +286,17 @@ label correct10:
 
     bocchi "You've now advanced to the Hard Level!"
 
-    bocchi "Let's start with my most difficult question, leaving famous scientists such as Quandale Dingle confused and dazed."
+    bocchi "Moving on.."
 
-    bocchi "Let's see how a mere PSHS student can answer this impossible question."
-
-    bocchi "What is the boiling point of water?"
+    bocchi "The Avogadro Constant is..."
 
     menu:
-        "100 C":
+        "6.02214076 × 10^23 mol^-1":
             jump correct11
-        "212 F":
-            bocchi "{cps=20}AMERICAN DETECTED. ELIMINATION STARTS IN {/cps}{cps=4}3...2...1...e{/cps}{nw}"
-            e "dreaded e. you pizza eating mcdonalds grubbing patriot"
-        "373.15 K":
-            jump correct11
+        "3.14":
+            jump wrong1
+        "0":
+            jump wrong1
 
 label correct11:
     bocchi "I can't believe this..."
@@ -336,65 +330,74 @@ label correct11:
 label correct12:
     bocchi "You somehow managed to answer that! Well done!"
 
-    bocchi "Next question..."
+    bocchi "Next question... I think you need a periodic table for this one!~"
 
-    bocchi "Which of the following has the most basic structure among the choices?"
+    bocchi "The isotope Cr–53 is produced by the beta decay of which of the following:"
 
     menu:
-        "Methane":
+        "53Mn":
             jump wrong6
-        "Carbon":
+        "54V":
             jump wrong6
-        "Titin":
+        "52Cr":
             jump wrong6
-        "Electron":
+        "53V":
             jump correct13
-        "Proton":
+        "54Cr":
             jump wrong6
             
 label wrong6:
-    bocchi "Wrong! Report to Sir Kier tomorrow."
+    bocchi "Oops! Let's give that another try!"
 
-    e "hii"
+    jump correct135
 
 label correct13:
-    bocchi "-"
+    bocchi "Very good! I wish I was that smart..."
 
-    bocchi "Next question..."
+    bocchi "Let's go to the next question!"
 
-    bocchi "Which of the following structures have                    ?"
+    label correct135:
 
-    menu:
-        "Methane":
-            jump wrong6
-        "Carbon":
-            jump wrong6
-        "Titin":
-            jump wrong6
-        "Electron":
-            jump correct14
-        "Proton":
-            jump wrong6
+        bocchi "When a voltaic cell reaches equilibrium, what happens?"
+
+        menu:
+            "E= 0":
+                jump wrong6
+            "Ecell = 0":
+                jump correct14
+            "Ecell = K":
+                jump wrong6
+            "E= K":
+                jump wrong6
+            "Ecell = Q":
+                jump wrong6
+
 
 label correct14:
-    bocchi "You somehow managed to answer that! Well done!"
+    bocchi "Great! By now it's obvious that you're passionate about chemistry!"
 
     bocchi "Next question..."
 
-    bocchi "Which of the following is a double-ring nitrogenous base?"
+    label correct145:
 
-    menu:
-        "Thymine":
-            jump wrong6
-        "Cytosine":
-            jump wrong6
-        "Guanine":
-            jump correct15
-        "Ribose":
-            jump wrong6
-        "Adenine":
-            jump wrong6
+        bocchi "Which of the following is a double-ring nitrogenous base?"
 
+        menu:
+            "Thymine":
+                jump wrong6
+            "Cytosine":
+                jump wrong6
+            "Guanine":
+                jump correct15
+            "Ribose":
+                jump wrong6
+            "Adenine":
+                jump wrong6
+
+label wrong7:
+    bocchi "Oops! Let's give that another try!"
+
+    jump correct145
 
 label correct15:
     bocchi "Amazing!"
@@ -404,10 +407,54 @@ label correct15:
     bocchi "What is the electron domain geometry of sulfur hexafluoride?"
 
     menu:
-        "Square pyramidal":
+        "Circle":
             jump wrong6
         "Octahedral":
-            jump correct15
-        "Linear":
+            jump correct16
+        "Popeye's Chicken Sandwich":
             jump wrong6
+
+label correct16:
+    bocchi "Good job!"
+
+    bocchi "This is the final question in my super amazing Chemistry Trivia Game."
+
+    bocchi "Let's end this quiz with my most difficult question... heheheh"
+
+    bocchi "I wonder how a mere PSHS student can answer this impossible question."
+
+    bocchi "Are you ready?????"
+
+    menu:
+        "Okay, I guess?":
+            jump preend
+        "nah not rlly":
+            e "Okay"
+
+label preend:
+    bocchi "What is the boiling point of water?"
+
+    menu:
+        "100 C":
+            jump ending
+        "212 F":
+            bocchi "{cps=20}AMERICAN DETECTED. ELIMINATION STARTS IN {/cps}{cps=4}3...2...1...e{/cps}{nw}"
+            e "dreaded e. you pizza eating mcdonalds grubbing patriot"
+
+label ending: 
+    bocchi "Now this ends the chemistry trivia!"
+
+    hide bocchi1
+    show bocchi2
+    bocchi "T-thank you so much for participating!"
+    hide bocchi2
+    show bocchi1
+
+    bocchi "See you! Bocchi's gonna go back to the cardboard box in the closet and play guitar. Bye, bye~"
+
+    "I lay myself on the quadrangle stairs again, as the girl slowly disappears from my sight."
+
+    "Maybe I really was.. the rock of her Bocchi."
+
+    return
 
